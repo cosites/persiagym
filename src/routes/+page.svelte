@@ -1,8 +1,8 @@
 <script>
     let instagram = "https://www.instagram.com/persiagym/";
-    let whatsapp = "#";
+    let telegram = "https://t.me/persiagym1";
     let email = "contact@persiagym.com";
-    let phone = "+982122063872";
+    let phone = "+982122063869";
     let address = "https://goo.gl/maps/t5d4J3rej92Drshi9";
     let iconPath = "/logo.jpg";
 </script>
@@ -22,8 +22,8 @@
         </a>
 
         <!-- WhatsApp -->
-        <a href="{whatsapp}" target="_blank" class="block py-4 px-6 bg-black rounded-lg text-white">
-            <i class="text-lg mr-1 sm:mr-2 fa-brands fa-whatsapp"></i>
+        <a href="{telegram}" target="_blank" class="block py-4 px-6 bg-black rounded-lg text-white">
+            <i class="text-lg mr-1 sm:mr-2 fa-brands fa-telegram"></i>
             News
         </a>
 
