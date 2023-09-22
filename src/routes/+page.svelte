@@ -1,6 +1,6 @@
 <script>
     let instagram = "https://www.instagram.com/persiagym/";
-    let telegram = "https://t.me/persiagym1";
+    let telegram = "https://t.me/persiagym_news";
     let email = "contact@persiagym.com";
     let phone = "+982122063869";
     let address = "https://goo.gl/maps/t5d4J3rej92Drshi9";
