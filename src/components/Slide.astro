@@ -1,0 +1,110 @@
+---
+interface Props {
+}
+
+const {} = Astro.props;
+
+---
+
+
+<div class="mx-auto max-w-5xl sm:mt-10 sm:px-6 lg:px-8  flex flex-col justify-center items-center pb-10" dir="rtl">
+    <h1 class="text-white text-6xl mt-28 font-bold">همراه مربیان ما</h1>
+    <p class="text-white mt-5 text-center pb-10  mx-5 text-4xl">بهترین تمرین خود را تجربه کن</p>
+
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <div class="mySlides w-full mb-10 relative overflow-hidden px-6 py-5 shadow-xl max-w-screen-md mx-auto sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+        <img class="absolute inset-0 w-full h-full block mx-auto object-cover"
+             src="./slide1.jpg">
+        <div class="absolute inset-0 bg-gray-800/50 mix-blend-multiply"></div>
+        <div class="relative mx-auto max-w-2xl lg:mx-0">
+            <figure>
+                <blockquote class="mt-6 font-semibold text-white sm:text-xl sm:leading-8">
+                    <p class=" text-3xl ">از قهرمانان ایران زمین با ۲۰ سال سابقه تمرین در رشته پرورش اندام.</p>
+                </blockquote>
+                <figcaption class="mt-6 text-white text-2xl">محمد عروجن</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="mySlides  mb-10  relative overflow-hidden bg-gray-900 px-6 py-5 shadow-xl max-w-screen-md mx-auto sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20 ">
+        <img class="absolute inset-0 h-full w-full block mx-auto object-cover"
+             src="./slide2.jpg">
+        <div class="absolute inset-0 bg-gray-800/50 mix-blend-multiply"></div>
+        <div class="relative mx-auto max-w-2xl lg:mx-0">
+            <figure>
+                <blockquote class="mt-6 font-semibold text-white sm:text-xl sm:leading-8">
+                    <p class="text-3xl">مربی دفاع شخصی آکادمی هنرهای رزمی باشگاه پرشیا و بنیان‌گذار سبک فول سلف دیفنس.</p>
+                </blockquote>
+                <figcaption class="mt-6 text-white text-2xl">علی باب الحوائجی</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="mySlides  mb-10  relative overflow-hidden bg-gray-900 px-6 py-5 shadow-xl max-w-screen-md mx-auto sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20 ">
+        <img class="absolute inset-0 h-full w-full block mx-auto object-cover"
+             src="./slide3.jpeg">
+        <div class="absolute inset-0 bg-gray-800/50 mix-blend-multiply"></div>
+        <div class="relative mx-auto max-w-2xl lg:mx-0">
+            <figure>
+                <blockquote class="mt-6 font-semibold text-white sm:text-xl sm:leading-8">
+                    <p class="text-3xl">قهرمان بادی کلاسیک کشور و عضو تیم ملی ایران در سال ۱۴۰۰.</p>
+                </blockquote>
+                <figcaption class="mt-6 text-white text-2xl">مصطفی ابوطالبی</figcaption>
+            </figure>
+        </div>
+    </div>
+    </div>
+
+
+    <div class=" flex text-center items-center mb-10">
+        <button class="dot h-4 w-4 bg-gray-600 inline-block  rounded-full mx-2 duration-500" ></button>
+        <button class="dot h-4 w-4 bg-gray-600 inline-block  rounded-full mx-2 duration-500" ></button>
+        <button class="dot h-4 w-4 bg-gray-600 inline-block  rounded-full mx-2 duration-500" ></button>
+    </div>
+</div>
+
+
+
+<style>
+    .active {
+        background-color: white;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 2s;
+    }
+
+    @keyframes fade {
+        from {opacity: .6}
+        to {opacity: 1}
+    }
+</style>
+
+
+<script>
+
+    let slideIndex = 0;
+    let isSlideshowPaused = false;
+    showSlides();
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+
+</script>
