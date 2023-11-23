@@ -1,7 +1,4 @@
 ---
-interface Props {}
-
-const {} = Astro.props;
 
 let instagram   = "https://www.instagram.com/persiagym/";
 let telegram    = "https://t.me/persiagym_news";
@@ -12,63 +9,62 @@ let phone       = "+982122063869";
 ---
 
 
-<footer aria-labelledby="footer-heading" class="relative flex py-24 justify-center bg-black " dir="rtl" >
-    <h2 id="footer" class="sr-only">Footer</h2>
-    <div class="justify-center items-center md:grid-cols-4 grid-cols-3 grid-rows-2 ">
+<footer class="relative flex py-24 justify-center bg-black" dir="rtl" >
+    <div class="justify-center items-center md:grid-cols-4 grid-cols-3 grid-rows-2">
         <div class="mt-10 grid grid-cols-2 md:gap-8">
             <div class="md:grid md:grid-cols-2 md:gap-8 mr-8">
                 <div class="mt-10 md:mt-0">
-                    <h3 class="text-lg font-semibold text-white ">ساعات کاری</h3>
-                    <ul role="list" class="mt-6 space-y-4 space-x-6 md:space-x-0">
+                    <h3>ساعات کاری</h3>
+                    <ul class="mt-6 space-y-4 space-x-6 md:space-x-0">
                         <li>
-                            <p class="text-white">شنبه ـ چهارشنبه : ۵ - ۲۳</p>
+                            <p>شنبه ـ چهارشنبه : ۲۳ - ۵ </p>
                         </li>
                         <li>
-                            <p class="text-white">پنج شنبه : ۱۰ - ۲۳</p>
+                            <p>پنج شنبه : ۲۳ - ۱۰</p>
                         </li>
                         <li>
-                            <p class="text-white">جمعه : تعطیل میباشد</p>
+                            <p>جمعه : تعطیل میباشد</p>
                         </li>
                     </ul>
                 </div>
                 <div class="mt-20 md:mt-0">
-                    <h3 class="text-lg font-semibold text-white">برقراری تماس با ما</h3>
-                    <ul role="list" class="mt-6 md:space-y-4 md:space-x-0 md:block flex space-x-6 ml-10">
+                    <h3>برقراری تماس با ما</h3>
+                    <ul class="contact-us">
                         <li class="mx-3 md:mx-0 ">
-                            <a class="duration-500 " href=`mailto:${email}`>
-                                <i class="w-15 h-15 fa-solid fa-envelope bg-white text-black hover:text-neutral-500 rounded-full p-3"> </i>
+                            <a href=`mailto:${email}`>
+                                <i class="icon fa-solid fa-envelope w-15 h-15"></i>
                             </a>
                         </li>
                         <li class="mx-3 md:mx-0">
-                            <a class="duration-500 " href=`tel:${phone}`>
-                                <i class="w-15 h-15 fa-solid fa-phone bg-white text-black hover:text-neutral-500 rounded-full p-3"> </i>
+                            <a href=`tel:${phone}`>
+                                <i class="icon w-15 h-15 fa-solid fa-phone"> </i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="md:grid md:grid-cols-2 gap-8 mr-8">
+            <div class="md:grid md:grid-cols-2 md:gap-8 mr-8">
                 <div class="mt-10 md:mt-0 ">
-                    <h3 class="text-lg font-semibold text-white">ما را دنبال کنید</h3>
-                    <ul role="list" class="mt-6 md:space-y-4 md:space-x-0 md:block flex space-x-6">
+                    <h3>ما را دنبال کنید</h3>
+                    <ul class="follow-us">
                         <li class="mx-3 md:mx-0">
-                            <a class="duration-500 " href={telegram}>
-                                <i class="w-15 h-15 fab fa-telegram bg-white text-black hover:text-neutral-500 rounded-full p-3"> </i>
+                            <a href={telegram}>
+                                <i class="icon w-15 h-15 fab fa-telegram"> </i>
                             </a>
                         </li>
                         <li class="mx-3 md:mx-0">
-                            <a class="duration-500 " href={instagram}>
-                                <i class="w-15 h-15 fab fa-instagram bg-white text-black hover:text-neutral-500 rounded-full p-3"> </i>
+                            <a href={instagram}>
+                                <i class="icon w-15 h-15 fab fa-instagram"> </i>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="mt-32 pt-4 md:mt-0 md:pt-0">
-                    <h3 class="text-lg font-semibold  text-white">ما را پیدا کنید</h3>
-                    <ul role="list" class="mt-6 space-y-4 md:space-x-0 md:block flex space-x-6">
+                    <h3>ما را پیدا کنید</h3>
+                    <ul class="find-us mt-6">
                         <li>
-                            <a class="duration-500 " href={address}>
-                                <i class="w-15 h-15 fa-solid fa-location-dot bg-white text-black hover:text-neutral-500 rounded-full p-3"> </i>
+                            <a href={address}>
+                                <i class="icon w-15 h-15 fa-solid fa-location-dot"> </i>
                             </a>
                         </li>
                     </ul>
@@ -77,7 +73,6 @@ let phone       = "+982122063869";
         </div>
     </div>
 </footer>
-
 
 <div class="flex justify-center items-center bg-black border-2 border-black border-t-neutral-600">
     <div class="text-md text-neutral-400 my-6">
@@ -88,7 +83,22 @@ let phone       = "+982122063869";
 </div>
 
 
+<style>
+    h3 {
+        @apply text-lg font-semibold text-white;
+    }
 
+    p {
+       @apply text-white;
+    }
 
+    .contact-us,
+    .follow-us,
+    .find-us ul {
+        @apply mt-6 md:space-y-4 md:space-x-0 md:block flex space-x-6;
+    }
 
-
+    .icon {
+        @apply bg-white text-black hover:text-neutral-500 rounded-full p-3 duration-500;
+    }
+</style>
