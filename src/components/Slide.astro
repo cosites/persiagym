@@ -4,7 +4,7 @@
 
     <div class="relative w-full">
     <div class="mySlides fade">
-        <img class="slide-img" src="./slide1.jpg">
+        <img class="slide-img" src="./slide1.jpg" alt="slide1 image">
         <div class="overlay"></div>
         <div class="content">
             <figure>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="mySlides fade">
-        <img class="slide-img" src="./slide2.jpg">
+        <img class="slide-img" src="./slide2.jpg" alt="slide2 image">
         <div class="overlay"></div>
         <div class="content">
             <figure>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="mySlides fade">
-        <img class="slide-img" src="./slide3.jpeg">
+        <img class="slide-img" src="./slide3.jpg" alt="slide3 image">
         <div class="overlay"></div>
         <div class="content">
             <figure>
@@ -54,7 +54,7 @@
 
 <style>
     .mySlides {
-        @apply mb-10 relative overflow-hidden bg-gray-900 px-6 py-5 shadow-xl max-w-screen-md mx-auto sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20;
+        @apply mb-10 relative overflow-hidden bg-gray-900 shadow-xl max-w-screen-md mx-auto sm:rounded-3xl px-10 py-24 md:px-12 lg:px-20;
     }
 
     .slide-img {
@@ -78,7 +78,7 @@
     }
 
     .dot {
-        @apply h-4 w-4 bg-gray-600 inline-block  rounded-full mx-2 duration-500;
+        @apply bg-gray-600 h-4 w-4 inline-block rounded-full mx-2 duration-500;
     }
 
     .active {
@@ -99,7 +99,6 @@
 
 <script>
     let slideIndex = 0;
-    let isSlideshowPaused = false;
     showSlides();
     function showSlides() {
         let i;
