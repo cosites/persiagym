@@ -1,37 +1,28 @@
-# Astro TEMPLATE
-
-> ### [LIVE DEMO](https://astro-01.eavinti.com/)
-
-***
-
-![hero](./public/screenshot.png)
-
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
 ├── public/
-│   └── ... images
+│   └── ...
 ├── src/
 │   ├── components/
-│   │   └── Faq.astro
 │   │   └── Footer.astro
 │   │   └── Hero.astro
-│   │   └── Pricing.astro
+│   │   └── News.astro
+│   │   └── Slide.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
+│       └── 404.astro
 │       └── index.astro
-└── package.json
+├── astro.config.mjs
+├── package.json
+└── tailwind.config.cjs
 ```
-
-
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
