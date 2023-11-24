@@ -1,0 +1,124 @@
+---
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html class="h-full bg" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="باشگاه پرشیا">
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="icon" type="image/svg+xml" href="/logo.jpg"/>
+  <link rel="stylesheet" href="/fonts/fontawesome/css/all.css"/>
+  <title>{title}</title>
+</head>
+<body>
+<div class="bg">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-44 top-0 fixed w-full bg-black">
+      <div class="hidden lg:flex lg:gap-x-12 ">
+        <a href="/#news" class="nav-item text-lg">اخبار</a>
+        <a href="/#footer" class="nav-item text-lg">ارتباط با ما </a>
+        <a href="/#about" class="nav-item text-lg">درباره ما</a>
+      </div>
+
+      <div id="openNavBar" class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white-700">
+          <svg class="h-10 w-10" viewBox="0 0 24 24" stroke-width="1.5" stroke="white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex lg:flex-1 justify-end">
+        <a href="/" class="m-1.5 p-1.5 ">
+          <img class="h-20 w-auto border-2" src="/logo.jpg" alt="">
+        </a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div id="navBar" class="hidden">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black px-6 py-6 sm:w-full">
+        <div class="flex items-center justify-between">
+          <a href="/" class="-m-1.5 p-1.5">
+            <img class="h-20 w-auto border-2" src="/logo.jpg" alt="">
+          </a>
+          <button id="closeNavBar" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <svg class="h-10 w-10" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                 aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6">
+          <div class="-my-6 divide-y divide-gray-500">
+            <div id="item" class="space-y-2 py-6 group">
+                <a href="/#about">درباره ما</a>
+                <a href="/#news">اخبار</a>
+                <a href="/#footer">ارتباط با ما</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <div class="mx-auto w-full">
+    <Footer/>
+  </div>
+</div>
+</body>
+</html>
+
+
+<style>
+  .nav-item {
+    @apply font-semibold text-white hover:text-neutral-500;
+  }
+
+  #item a {
+    @apply -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:text-black hover:bg-gray-50;
+  }
+
+  .bg {
+    animation: animateBg 14s linear infinite;
+    background-image: linear-gradient(45deg,#000000,#5c0700,#000000,#5c0700);
+    background-size: 400% 100%;
+  }
+  @keyframes animateBg {
+    0% { background-position: 0 50%; }
+    50% {background-position: 100% 50%; }
+    100% { background-position:0 50%; }
+  }
+</style>
+
+
+<script>
+const navBar = document.getElementById('navBar');
+const closeNavBar = document.getElementById('closeNavBar');
+const openNavBar = document.getElementById('openNavBar');
+const item = document.getElementById('item');
+
+closeNavBar.addEventListener('click', toggleMenu);
+openNavBar.addEventListener('click', toggleMenu);
+item.addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+    navBar.classList.toggle("hidden");
+    }
+</script>
+
+
+

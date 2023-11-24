@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="باشگاه پرشیا">
+    <div class="bg">
+        <main class="mx-auto w-full max-w-7xl px-6 pb-16 pt-20 sm:pb-24 lg:px-8">
+            <div class="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
+                <p class="text-base font-semibold leading-8 text-gray-300 mt-10">خطای ۴۰۴</p>
+                <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-300 sm:text-5xl">این صفحه وجود ندارد</h1>
+            </div>
+            <div class="mx-auto mt-16 flow-root max-w-lg sm:mt-20">
+                <div class="mt-10 flex justify-center">
+                    <a href="/" class="rounded-md border border-black bg-gray-300 px-3.5 py-2.5 text-center text-sm font-nunito text-black shadow-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                        <span aria-hidden="true">&larr;</span>
+                        بازگشت به خانه
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</Layout>
+
+
+<style>
+    .bg {
+        animation: animateBg 14s linear infinite;
+        background-image: linear-gradient(45deg,#000000,#5c0700,#000000,#5c0700);
+        background-size: 400% 100%;
+    }
+    @keyframes animateBg {
+        0% { background-position: 0 50%; }
+        50% {background-position: 100% 50%; }
+        100% { background-position:0 50%; }
+    }
+</style>

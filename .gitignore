@@ -1,5 +1,7 @@
+*.swp
 .idea/
 .DS_Store
 .svelte-kit/
 node_modules
 build/
+dist/
